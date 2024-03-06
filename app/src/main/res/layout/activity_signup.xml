@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="40dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="60dp"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="User name"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="80dp"
+        android:textSize="30dp"
+        android:id="@+id/UserNameSignUp"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:drawableRight="@drawable/baseline_remove_red_eye_24"
+        android:id="@+id/PasswordSignUp"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:drawableRight="@drawable/baseline_remove_red_eye_24"
+        android:id="@+id/ConfirmPasswordSignUp"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:id="@+id/SignUp"
+        />
+
+</LinearLayout>

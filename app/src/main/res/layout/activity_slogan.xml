@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                app:title="Trang chủ"
+                android:drawableEnd="@drawable/baseline_shopping_cart_24"
+                android:id="@+id/toolbarmanhinhchinh"
+                android:background="#5992d2"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+            </androidx.appcompat.widget.Toolbar>
+            <ViewFlipper
+                android:id="@+id/viewfipper"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+            </ViewFlipper>
+            <LinearLayout
+                android:background="#5992d2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sản phẩm mới nhất"
+                    android:textColor="#a71a04"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_margin="5dp"
+                    />
+                <view class="androidx.appcompat.app.AlertController$RecycleListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </view>
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</LinearLayout>
