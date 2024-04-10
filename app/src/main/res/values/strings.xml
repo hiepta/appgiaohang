@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Test</string>
+    <string name="app_name">App giao hàng</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="arrtrasua">
+        <item>Trà sữa dưa lưới</item>
+        <item>Trà sữa bạc hà</item>
+        <item>Trà sữa Kiwi</item>
+        <item>Trà sữa dâu tằm</item>
+        <item>Trà sữa Việt quất</item>
+        <item>Trà sữa chanh dây</item>
+    </string-array>
 </resources>

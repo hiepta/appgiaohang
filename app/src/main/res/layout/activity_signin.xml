@@ -16,12 +16,13 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="User name"
-        android:drawableStart="@drawable/baseline_person_24"
+        android:hint="Email"
+        android:drawableStart="@drawable/baseline_email_24"
         android:layout_marginStart="60dp"
         android:layout_marginTop="100dp"
         android:textSize="30dp"
-        android:id="@+id/txtUserName"
+        android:id="@+id/txtEmail"
+        android:inputType="textEmailAddress"
         />
     <EditText
         android:layout_width="300dp"
@@ -42,6 +43,7 @@
         android:layout_marginTop="30dp"
         android:textSize="30dp"
         android:id="@+id/btnSignIn"
+        android:background="@drawable/round_btn"
         />
 
 </LinearLayout>

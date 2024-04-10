@@ -20,6 +20,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="80dp"
         android:id="@+id/btnSignIn"
+        android:background="@drawable/round_btn"
         android:textSize="30dp"
         />
     <Button
@@ -30,6 +31,7 @@
         android:layout_marginTop="20dp"
         android:textSize="30dp"
         android:id="@+id/btnSignUp"
+        android:background="@drawable/round_btn"
         />
 
 </LinearLayout>

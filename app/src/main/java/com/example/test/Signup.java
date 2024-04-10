@@ -1,46 +1,58 @@
 package com.example.test;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Signup extends AppCompatActivity {
-    TextView UserNameSignUp;
+//    TextView UserName;
+    TextView EmailSignUp;
     TextView PasswordSignUp;
-    TextView ConfirmPasswordSignUp;
     Button SignUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        UserNameSignUp = findViewById(R.id.UserNameSignUp);
+        EmailSignUp = findViewById(R.id.EmailSignUp);
         PasswordSignUp = findViewById(R.id.PasswordSignUp);
-        ConfirmPasswordSignUp = findViewById(R.id.ConfirmPasswordSignUp);
+//        UserName = findViewById(R.id.txtUser);
         SignUp = findViewById(R.id.SignUp);
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(UserNameSignUp.getText().toString().equals("")){
-                    Toast.makeText(getApplicationContext(),"Bạn chưa nhập username",Toast.LENGTH_LONG).show();
-                }
-                else if(PasswordSignUp.getText().toString().equals("")){
-                    Toast.makeText(getApplicationContext(),"Bạn chưa nhập password",Toast.LENGTH_LONG).show();
-                }
-                else if(ConfirmPasswordSignUp.getText().toString().equals("")){
-                    Toast.makeText(getApplicationContext(),"Bạn chưa nhập confirm password",Toast.LENGTH_LONG).show();
-                }
-                else if(!PasswordSignUp.equals(ConfirmPasswordSignUp)) {
-                    Intent myIntent = new Intent(Signup.this,Slogan.class);
-                    startActivity(myIntent);
-                }else{
-                    Toast.makeText(getApplicationContext(),"Đăng nhập thất bại",Toast.LENGTH_LONG).show();
-                }
+                String email, password, user;
+                email = EmailSignUp.getText().toString().trim();
+                password = PasswordSignUp.getText().toString().trim();
+//                user = UserName.getText().toString().trim();
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.createUserWithEmailAndPassword(email,password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    Intent intent = new Intent(Signup.this,Signin.class);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    Toast.makeText(Signup.this,"Đăng kí thất bại",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
+
     }
 }
