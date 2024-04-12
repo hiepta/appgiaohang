@@ -8,15 +8,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -27,9 +30,6 @@ import java.util.Arrays;
 
 
 public class Manhinhchinh extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-//    ListView lv_trasua;
-//    ArrayAdapter<String> adapter;
-//    ArrayList<String> dsTraSua = new ArrayList<>();
     private DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +85,14 @@ public class Manhinhchinh extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menutoolbar,menu);
+//        MenuItem menuItem = menu.findItem(R.id.toolgiohang);
+//        View actionView = menuItem.getActionView();
+//        actionView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onOptionsItemSelected(menuItem);
+//            }
+//        });
         return true;
     }
 

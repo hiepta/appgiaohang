@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +18,6 @@ import java.util.List;
 public class NavCategoryAdapter extends RecyclerView.Adapter<NavCategoryAdapter.ViewHolder> {
     Context context;
     List<NavCategoryModel> list;
-
     public NavCategoryAdapter(Context context, List<NavCategoryModel> list) {
         this.context = context;
         this.list = list;
@@ -44,11 +44,13 @@ public class NavCategoryAdapter extends RecyclerView.Adapter<NavCategoryAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView title,price;
+        Button gioHang;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.iv_image);
             title = itemView.findViewById(R.id.iv_title);
             price = itemView.findViewById(R.id.iv_price);
+            gioHang = itemView.findViewById(R.id.btnGioHang);
         }
     }
 }

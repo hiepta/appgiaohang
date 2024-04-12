@@ -35,12 +35,14 @@ public class Signin extends AppCompatActivity {
                 email = txtEmail.getText().toString().trim();
                 password = txtPassword.getText().toString().trim();
                 FirebaseAuth firebaseAuth_signin = FirebaseAuth.getInstance();
+                //Khi người dùng đăng nhập vào hệ thống thì chuyển email và password vào signInWithEmailAndPassword
                 firebaseAuth_signin.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {;
                                 if (task.isSuccessful()) {
                                     Intent intent = new Intent(Signin.this, Manhinhchinh.class);
+//                                    intent.putExtra("Email",txtEmail.getText().toString());
                                     startActivity(intent);
                                 } else {
                                     Toast.makeText(Signin.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();

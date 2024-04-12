@@ -27,7 +27,6 @@ public class TimKiemFragment extends Fragment {
 
     SearchView searchView;
     ListView listview;
-//    String[] trasua = {"chanh dây","bạc hà","Dâu tây"};
     ArrayList<String> trasua = new ArrayList<>();
     ArrayAdapter<String> arrayAdapter;
     @Override
@@ -48,19 +47,21 @@ public class TimKiemFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-//        inflater.inflate(R.menu.menutoolbar,menu);
         MenuItem menuItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            //true nếu truy vấn đã được người nghe xử lý, false để cho SearchView thực hiện hành động mặc định.
             @Override
             public boolean onQueryTextSubmit(String query) {
-//                arrayAdapter.getFilter().filter(query);
                 return false;
             }
+            //Tìm kiếm đến đâu thì nó hiển thị ra tới đó
+            //true nếu hành động đó được người nghe xử lý.
             @Override
             public boolean onQueryTextChange(String newText) {
                 String text = newText;
                 arrayAdapter.getFilter().filter(text);
+
                 return false;
             }
         });

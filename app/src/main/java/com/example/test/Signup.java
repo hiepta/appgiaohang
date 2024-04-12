@@ -17,7 +17,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Signup extends AppCompatActivity {
-//    TextView UserName;
     TextView EmailSignUp;
     TextView PasswordSignUp;
     Button SignUp;
@@ -28,16 +27,15 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         EmailSignUp = findViewById(R.id.EmailSignUp);
         PasswordSignUp = findViewById(R.id.PasswordSignUp);
-//        UserName = findViewById(R.id.txtUser);
         SignUp = findViewById(R.id.SignUp);
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email, password, user;
+                String email, password;
                 email = EmailSignUp.getText().toString().trim();
                 password = PasswordSignUp.getText().toString().trim();
-//                user = UserName.getText().toString().trim();
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                // tạo 1 tài khoản mới bằng cách chuyển địa chỉ email và password tới creaUserWithEmailAndPassword
                 firebaseAuth.createUserWithEmailAndPassword(email,password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
